@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tempo de infusão</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <main>
+        <div>
+            <header>
+                <h1>Duração de medicamento</h1>
+                <div id="container-volumeTotal">
+                    <label for="volumeTotal">Volume total:</label>
+                    <input type="number" id="volumeTotal" placeholder="Volume total">
+                </div>
+
+            </head>
+            <section id="lista">
+
+            </section>
+
+            <button id="btn-calcular"  data-bs-toggle="modal" data-bs-target="#modalresultado" >Calcular</button>
+        </div>
+        
+
+        <div id="btn-dialog"  data-bs-toggle="modal" data-bs-target="#options-line"> <p>+</p> </div>
+
+
+        <div class="modal" tabindex="-1" id="options-line">
+            <div class="modal-dialog modal-dialog-centered">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title">Eventos</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body" id="options">
+                        <button id="vt" data-bs-toggle="modal" data-bs-target="#options-vt" >Vazão/Tempo</button>
+                        <button id="btn-vr" data-bs-toggle="modal" data-bs-target="#options-vr">Vazão/Restante</button>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="modal" tabindex="-1" id="options-vt">
+            <div class="modal-dialog modal-dialog-centered">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title">Vazão Restante</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body" id="body-vt">
+                    <div>
+                        <label for="" > Vazão</label>
+                        <input type="number" id="vazaoVT" placeholder="ml/h">
+                        ml/h
+                    </div>
+                    <div>
+                        <label for=""> Tempo</label>
+                        <input type="number" id="tempoVT" placeholder="min">
+                        min
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" id="btn-addVT" >Confirmar</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="modal" tabindex="-1" id="options-vr">
+            <div class="modal-dialog modal-dialog-centered">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title">Vazão Restante</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body" id="body-vr">
+                    <label for="" > Vazão:</label>
+                    <input type="number" id="vazao-Vr" placeholder="ml/h">
+                    ml/h
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" id="btn-addVr" data-bs-dismiss="modal">Confirmar</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="modal" tabindex="-1" id="modalresultado">
+            <div class="modal-dialog modal-dialog-centered">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title">Resultado</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body" id="divResultadoModal">
+                  
+                </div>
+
+              </div>
+            </div>
+          </div>
+
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+
+    <script>
+        // const btndialog = document.querySelector('#btn-dialog')
+        // const optionsLine = document.querySelector('#options-line')
+        // const fecharOptionsLine = document.querySelector('#fechar-open-line')
+        // const btnVT = document.querySelector('#vt')
+        // const btnVR = document.querySelector('#btn-vr')
+        // const OptionsVT = document.querySelector('#options-vt')
+        // const OptionsVR = document.querySelector('#options-vr')
+        // const closeVT = document.querySelector('#fechar-vt')
+        // const closeVR = document.querySelector('#fechar-vr')
+        const btnAddVT = document.querySelector('#btn-addVT')
+        const btnAddVR = document.querySelector('#btn-addVr')
+
+        const btncalcular = document.querySelector('#btn-calcular');
+        
+        const volumeTotal = null;
+        var vazaoRestante = null;
+
+
+        btnAddVT.onclick = function(){
+            const vazao = document.querySelector('#vazaoVT').value;
+            const tempo = document.querySelector('#tempoVT').value;
+
+            VazaoComTempo(vazao,tempo, volumeTotal)
+        }
+
+
+        btnAddVR.onclick = function(){
+            vazaoRestante = document.querySelector('#vazao-Vr').value;
+            console.log("Vazao restante: "+ vazaoRestante);           
+        }
+
+
+    </script>
+
+    <script src="./index.js"></script>
+
+</body>
+</html>
