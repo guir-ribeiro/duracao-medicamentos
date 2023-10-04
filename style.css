@@ -60,7 +60,7 @@
               height: 1.2rem;
               max-width: 50%;
               border-radius: 5px;
-              padding: 10px;
+              padding: 1.2rem;
               border: 1px solid var(--contrast-color);
           }
   
@@ -88,11 +88,16 @@
               height: 1px;
           }
   
-          #btn-calcular{
+          #btn-dialog, #btn-calcular{
               font-size: 1.5rem;
               border-radius: 5px;
               background-color: var(--contrast-color);
               color: var(--primary-color);
+
+          }
+
+          #btn-calcular{
+            display: none;
           }
   
           dialog{
@@ -100,7 +105,7 @@
           }
   
   
-          #btn-dialog{
+          /* #btn-dialog{
               width: 100%;
               position: absolute;
               bottom: 30px;            
@@ -119,7 +124,7 @@
               position: fixed;
               right: 20px;
               bottom: 10px;
-          }
+          } */
 /*   
           #options-line{
               max-width: 300px;
