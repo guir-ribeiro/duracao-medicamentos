@@ -63,6 +63,8 @@ function VazaoComTempo(vazao, tempo){
     TotalInfundido = TotalInfundido + volumeInfundido;
     tempoTotal = Number(tempoTotal) + Number(tempo);
     registrar(vazao,tempo, volumeInfundido)
+    
+    document.querySelector('#vazaoVT').value = null;
 
 }
 

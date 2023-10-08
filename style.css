@@ -103,40 +103,12 @@
           dialog{
               box-shadow: 0px 0px 3px var(--contrast-color);
           }
-  
-  
-          /* #btn-dialog{
-              width: 100%;
-              position: absolute;
-              bottom: 30px;            
-              right: 50%;
-              transform: translateX(50%)
+
+          .modal-body > img,.modal-body > h2 {
+            margin: auto;
+            display: block;
+            text-align: center;
           }
-  
-          #btn-dialog > p{
-              background-color: var(--contrast-color);
-              width: 3rem;
-              line-height: 3rem;
-              font-size: 3rem;
-              color: var(--primary-color);
-              text-align: center;
-              border-radius: 50%;
-              position: fixed;
-              right: 20px;
-              bottom: 10px;
-          } */
-/*   
-          #options-line{
-              max-width: 300px;
-              position: absolute;
-              top: 70%;
-              left: 90%;
-              transform: translate(-100%, -50%);
-              border-radius: 5px;
-              padding: 10px;
-  
-  
-          } */
   
           #options{
               display: flex;
