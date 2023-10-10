@@ -104,11 +104,14 @@
               box-shadow: 0px 0px 3px var(--contrast-color);
           }
 
-          .modal-body > img,.modal-body > h2 {
+          .modal-body > img,h2,p {
             margin: auto;
             display: block;
             text-align: center;
           }
+          .modal-body > p{
+            font-size: 1rem;
+          } 
   
           #options{
               display: flex;

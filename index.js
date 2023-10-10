@@ -3,6 +3,9 @@ var TotalInfundido = 0;
 var volumeRestante = null;
 var tempoTotal = 0;
 
+// var vazaoVez = null;
+// var tempoVez = null;
+
 
 let items = [];
 
@@ -24,37 +27,24 @@ function renderlista(){
         let tempo = document.createTextNode(item[1] + 'min')
         let igual = document.createTextNode(' = ')
         let volume = document.createTextNode(item[2] + 'ml')
-        // let exit = document.createTextNode('x')
 
         pVazao.appendChild(vazao);
         pTempo.appendChild(tempo);
         pIgual.appendChild(igual);
         pVolume.appendChild(volume);
-        // pExit.appendChild(exit);
 
         divElement.appendChild(pVazao)
         divElement.appendChild(pTempo)
         divElement.appendChild(pIgual)
         divElement.appendChild(pVolume)
-        // divElement.appendChild(pExit)
 
         listElement.appendChild(divElement)
 
-        let posicao = items.indexOf(item);
 
-        pExit.setAttribute('onclick',`deletarTarefa(${posicao})`)
-        
     })
 
 }
 renderlista()
-
-// function deletarTarefa(posicao){
-//     items.splice(posicao,1);
-//     renderlista()
-//     salvarDados()
-// }
-
 
 
 function VazaoComTempo(vazao, tempo){
@@ -66,7 +56,27 @@ function VazaoComTempo(vazao, tempo){
     
     document.querySelector('#vazaoVT').value = null;
 
+
+    // const modalSucess = document.querySelector('#addSucess');
+     
+
+    // let paragrafoVazao = document.createElement('p');
+    // let paragrafoTempo = document.createElement('p');
+    // let textvazao = document.createTextNode('Vazão: ' + vazao + " ml/h")
+    // let textTempo = document.createTextNode('Tempo: ' + tempo + " min")
+    // paragrafoVazao.appendChild(textvazao);
+    // paragrafoTempo.appendChild(textTempo);
+
+    // modalSucess.appendChild(paragrafoVazao);
+    // modalSucess.appendChild(paragrafoTempo);
+    
+
 }
+
+// function trashTextSucess(){
+//     const modalSucess = document.querySelector('#addSucess');
+//     console.log(modalSucess)   
+// }
 
 
         
